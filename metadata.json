@@ -1,0 +1,5 @@
+{
+  "name": "學生服務學習點數管理系統 (SSLP)",
+  "description": "一個基於 Excel 匯入、自動建立帳號、並具備嚴格權限控管的學生服務學習點數管理與查詢平台。",
+  "requestFramePermissions": []
+}
