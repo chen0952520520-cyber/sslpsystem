@@ -1,4 +1,4 @@
-# 淑君學校系統 — 學生服務學習點數管理系統 (sslp)
+# 學生服務學習點數管理系統 (sslp)
 
 一個使用 Supabase + Vite + React (TypeScript) 的學生服務學習點數管理前端範例專案。
 
