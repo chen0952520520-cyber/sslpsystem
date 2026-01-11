@@ -20,12 +20,14 @@ npm install
 ```
 
 ### 設定環境變數
-- 建議建立 `.env.local`（或在 `supabaseClient.ts` 中替換）並設定：
+- 建議建立 `.env.local`（或使用 `.env`）；可以先複製 `.env.example` 並填入你的值：
 ```
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your_anon_public_key
 ```
-> 注意：目前專案內 `supabaseClient.ts` 以範例常數示範，請務必不要把真實金鑰推上公開 repo；改用環境變數或 .env 檔。
+> 注意：**不要**把真實金鑰推上公開的 Git repository。請務必把 `.env.local` 或含有實際金鑰的檔案加入 `.gitignore`（本專案已包含 `*.local`）。
+
+- 本專案已將 `supabaseClient.ts` 更新為從環境變數讀取設定，啟動時若缺少變數會拋出錯誤，以避免誤用硬編碼金鑰。
 
 ### 啟動開發伺服器
 ```bash

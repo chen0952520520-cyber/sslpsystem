@@ -2,14 +2,16 @@
 import { createClient } from '@supabase/supabase-js';
 
 /**
- * ⚠️ 注意：如果出現 "Invalid API key" 錯誤
- * 1. 請登入 Supabase 後台 -> Project Settings -> API
- * 2. 複製 "anon" "public" 金鑰 (通常以 eyJ... 開頭)
- * 3. 將下方的 supabaseKey 替換為正確的長字串
+ * 使用環境變數（Vite）載入 Supabase 設定
+ * - VITE_SUPABASE_URL: Supabase 專案 URL
+ * - VITE_SUPABASE_ANON_KEY: Supabase anon/public key
+ * 請勿將實際金鑰直接推上公開的程式碼庫。
  */
-const supabaseUrl = '';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 
-// 請確認此處是否為正確的 anon public key (通常長度很長)
-const supabaseKey = '';
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY must be set in environment');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
